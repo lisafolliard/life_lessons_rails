@@ -1,0 +1,3 @@
+<% content_for(:footer) do %>
+<li><%= link_to "New Lesson", new_section_lesson_path %></li>
+<% end %>

@@ -1,0 +1,9 @@
+<% content_for(:title, "Life Lessons") %>
+
+<h1>Sections for: All Your Life Lessons</h1>
+
+<ul>
+  <% @sections.each do |section| %>
+  <li><%= link_to section.title, section_path(section) %></li>
+  <% end %>
+</ul>
