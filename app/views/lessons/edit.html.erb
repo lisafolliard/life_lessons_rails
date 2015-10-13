@@ -1,0 +1,24 @@
+<h1>Edit lesson</h1>
+
+<%= form_for @lesson do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.label :content %>
+  <%= f.text_field :content %>
+
+  <%= f.label :number %>
+  <%= f.text_field :number %>
+
+  <%= f.submit  %>
+<% end %>
+
+
+<% if @lesson.errors.any? %>
+<h4>Something went wrong!</h4>
+  <ul>
+    <% @lesson.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
