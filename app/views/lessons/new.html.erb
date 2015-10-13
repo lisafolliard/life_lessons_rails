@@ -12,3 +12,12 @@
 
   <%= f.submit  %>
 <% end %>
+
+<% if @lesson.errors.any? %>
+<h4>Something went wrong!</h4>
+  <ul>
+    <% @lesson.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
