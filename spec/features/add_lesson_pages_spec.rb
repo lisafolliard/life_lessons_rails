@@ -31,3 +31,12 @@ describe "edit a lesson process" do
     expect(page).to have_content 'Fun'
   end
 end
+
+describe "delete a lesson process" do
+  it "allows you to delete a lesson" do
+    lesson = Lesson.create(:name => 'Funny', :content => 'Haha', :number => 6)
+    visit lesson_path(lesson)
+    click_on 'Delete Lesson'
+    expect(page).to_not have_content 'Funny'
+  end
+end
