@@ -3,3 +3,7 @@
 <h1><%= @section.title %></h1>
 
 <!-- list all lessons here -->
+
+<% content_for(:footer) do %>
+<li><%= link_to "New Lesson", new_section_lesson_path(@section) %></li>
+<% end %>
