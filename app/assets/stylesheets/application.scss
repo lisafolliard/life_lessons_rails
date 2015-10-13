@@ -1,2 +1,15 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+body {
+  background-color: #fff2c1;
+}
+
+li {
+  list-style-type: none;
+}
+
+hr {
+  color: #FFCB00;
+  border-width: 5px;
+}

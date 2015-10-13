@@ -1,4 +1,6 @@
-<h1>Lessons</h1>
+<% content_for(:title, "Life Lessons") %>
+
+<h1>All Your Life Lessons</h1>
 
 <ul>
   <% @lessons.each do |lesson| %>
@@ -6,6 +8,6 @@
   <% end %>
 </ul>
 
-<hr>
-
-<%= link_to "New Lesson", new_lesson_path %>
+<% content_for(:footer) do %>
+<li><%= link_to "New Lesson", new_lesson_path %></li>
+<% end %>
