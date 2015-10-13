@@ -10,4 +10,11 @@ describe "the add a lesson process" do
     click_on 'Create Lesson'
     expect(page).to have_content 'Lessons'
   end
+
+  it 'gives error when a field is blank' do
+    visit lessons_path
+    click_on 'New Lesson'
+    click_on 'Create Lesson'
+    expect(page).to have_content 'Something went wrong!'
+  end
 end
