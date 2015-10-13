@@ -2,7 +2,25 @@
 
 <h1><%= @section.title %></h1>
 
-<!-- list all lessons here -->
+<% if @section.lessons.any? %>
+  <h4>Here are the lessons for this section:</h4>
+
+  <ul>
+    <% @section.lessons.each do |lesson| %>
+      <li>
+        <%= lesson.name %>
+        <%= lesson.content %>
+        <%= link_to "Edit", edit_section_lesson_path(@section, lesson) %>
+        <%= link_to "Delete", section_lesson_path(@section, lesson),
+                                 :data => {:confirm => "Are you sure?",
+                                                :method => "delete"} %>
+
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>There are no lessons yet!</p>
+<% end %>
 
 <% content_for(:footer) do %>
 <li><%= link_to "New Lesson", new_section_lesson_path(@section) %></li>
