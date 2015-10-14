@@ -11,9 +11,7 @@
         <%= lesson.name %>
         <%= lesson.content %>
         <%= link_to "Edit", edit_section_lesson_path(@section, lesson) %>
-        <%= link_to "Delete", section_lesson_path(@section, lesson),
-                                 :data => {:confirm => "Are you sure?",
-                                                :method => "delete"} %>
+        <%= link_to "Delete", section_lesson_path(@section, lesson), :method => "delete" %>
 
       </li>
     <% end %>

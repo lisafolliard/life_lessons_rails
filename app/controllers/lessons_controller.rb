@@ -5,6 +5,11 @@ class LessonsController < ApplicationController
     @lesson = @section.lessons.new
   end
 
+  # def show
+  #   lesson = @section.lesson
+  #   render :show
+  # end
+
   def create
     @section = Section.find(params[:section_id])
     @lesson = @section.lessons.new(lesson_params)
@@ -32,7 +37,7 @@ class LessonsController < ApplicationController
 
   def destroy
     @section = Section.find(params[:section_id])
-    @lesson = @section.lessons.find(params[:id])
+    @lesson = Lesson.find(params[:id])
     @lesson.destroy
     redirect_to section_path(@section)
   end
